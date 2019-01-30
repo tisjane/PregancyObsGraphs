@@ -8,12 +8,13 @@ class BarChart extends Component {
     this.drawChart();
   }
 
+
   drawChart() {
     const data = [12, 5, 6, 6, 9, 10];
     const svg = d3.select("body")
     .append("svg")
-    .attr("width", 700)
-    .attr("height", 300)
+    .attr("width", this.props.width)
+    .attr("height", this.props.height)
     .style("margin-left", 100);
 
 
@@ -23,17 +24,18 @@ class BarChart extends Component {
       .append("text")
       .text((d) => d)
       .attr("x", (d, i) => i * 70)
-      .attr("y", (d, i) => 300 - (10 * d) - 3)
+      .attr("y", (d, i) => this.props.height - (10 * d) - 3)
+      .attr("fill", "#fc766a");
 
     svg.selectAll("rect")
       .data(data)
       .enter()
       .append("rect")
       .attr("x", (d, i) => i * 70)
-      .attr("y", (d, i) => 300 - 10 * d)
+      .attr("y", (d, i) => this.props.height - 10 * d)
       .attr("width", 65)
       .attr("height", (d, i) => d * 10)
-      .attr("fill", "green");
+      .attr("fill", "#fc766a");
 
   }
 
