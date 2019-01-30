@@ -15,11 +15,11 @@ class App extends Component {
 
   line_state = {
     data: [
-      {a: 1, b: 3},
-      {a: 2, b: 6},
-      {a: 3, b: 2},
-      {a: 4, b: 12},
-      {a: 5, b: 8}
+      {a: 1, b: 3, c: 34},
+      {a: 2, b: 6, c: 43},
+      {a: 3, b: 2, c: 13},
+      {a: 4, b: 12, c: 3},
+      {a: 5, b: 8, c: 23}
     ]
   }
 
@@ -41,11 +41,11 @@ class App extends Component {
           </a>
         </header>
 
-/*         <BarChart
-           height={this.state.width}
+         <BarChart
+           height={this.state.height}
            width={this.state.width}
-         />*/
-         <LineChart  data={this.line_state.data} width={this.state.width} height={this.state.width} />
+         />
+         <LineChart data={this.line_state.data} width={this.state.width} height={this.state.height} />
 
        </div>
     );
